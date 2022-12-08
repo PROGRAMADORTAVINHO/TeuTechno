@@ -43,11 +43,11 @@ namespace Componentes
             this.lblFrutasSelecionadas = new System.Windows.Forms.Label();
             this.lblDIgiteaFruta = new System.Windows.Forms.Label();
             this.lblFrutasListadas = new System.Windows.Forms.Label();
-            this.btnSelecionar = new System.Windows.Forms.Button();
-            this.btbVoltar = new System.Windows.Forms.Button();
+            this.btbSair = new System.Windows.Forms.Button();
             this.btbLimpar = new System.Windows.Forms.Button();
             this.txtDigiteaFruta = new System.Windows.Forms.TextBox();
             this.btbInserir = new System.Windows.Forms.Button();
+            this.btbSelecionar = new System.Windows.Forms.Button();
             this.gpbFrutas.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,7 +81,7 @@ namespace Componentes
             this.gpbFrutas.Location = new System.Drawing.Point(136, 72);
             this.gpbFrutas.Name = "gpbFrutas";
             this.gpbFrutas.Size = new System.Drawing.Size(269, 209);
-            this.gpbFrutas.TabIndex = 2;
+            this.gpbFrutas.TabIndex = 10;
             this.gpbFrutas.TabStop = false;
             this.gpbFrutas.Text = "Frutas";
             // 
@@ -109,7 +109,7 @@ namespace Componentes
             this.lblPera.Location = new System.Drawing.Point(22, 96);
             this.lblPera.Name = "lblPera";
             this.lblPera.Size = new System.Drawing.Size(47, 16);
-            this.lblPera.TabIndex = 2;
+            this.lblPera.TabIndex = 50;
             this.lblPera.Text = "3 - Pera";
             // 
             // lblMaca
@@ -132,7 +132,9 @@ namespace Componentes
             // 
             // txtSelecione
             // 
+            this.txtSelecione.Enabled = false;
             this.txtSelecione.Location = new System.Drawing.Point(152, 330);
+            this.txtSelecione.MaxLength = 50;
             this.txtSelecione.Name = "txtSelecione";
             this.txtSelecione.Size = new System.Drawing.Size(185, 20);
             this.txtSelecione.TabIndex = 1;
@@ -173,60 +175,64 @@ namespace Componentes
             this.lblFrutasListadas.TabIndex = 7;
             this.lblFrutasListadas.Text = "Frutas Listadas";
             // 
-            // btnSelecionar
+            // btbSair
             // 
-            this.btnSelecionar.Location = new System.Drawing.Point(176, 385);
-            this.btnSelecionar.Name = "btnSelecionar";
-            this.btnSelecionar.Size = new System.Drawing.Size(86, 45);
-            this.btnSelecionar.TabIndex = 2;
-            this.btnSelecionar.TabStop = false;
-            this.btnSelecionar.Text = "&Selecionar";
-            this.btnSelecionar.UseVisualStyleBackColor = true;
-            // 
-            // btbVoltar
-            // 
-            this.btbVoltar.Location = new System.Drawing.Point(478, 385);
-            this.btbVoltar.Name = "btbVoltar";
-            this.btbVoltar.Size = new System.Drawing.Size(86, 45);
-            this.btbVoltar.TabIndex = 5;
-            this.btbVoltar.Text = "&Voltar";
-            this.btbVoltar.UseVisualStyleBackColor = true;
+            this.btbSair.Location = new System.Drawing.Point(548, 385);
+            this.btbSair.Name = "btbSair";
+            this.btbSair.Size = new System.Drawing.Size(86, 45);
+            this.btbSair.TabIndex = 5;
+            this.btbSair.Text = "Sai&r";
+            this.btbSair.UseVisualStyleBackColor = true;
+            this.btbSair.Click += new System.EventHandler(this.btbSair_Click);
             // 
             // btbLimpar
             // 
             this.btbLimpar.Location = new System.Drawing.Point(297, 385);
             this.btbLimpar.Name = "btbLimpar";
-            this.btbLimpar.Size = new System.Drawing.Size(83, 45);
+            this.btbLimpar.Size = new System.Drawing.Size(86, 45);
             this.btbLimpar.TabIndex = 3;
             this.btbLimpar.Text = "&Limpar";
             this.btbLimpar.UseVisualStyleBackColor = true;
+            this.btbLimpar.Click += new System.EventHandler(this.btbLimpar_Click);
             // 
             // txtDigiteaFruta
             // 
             this.txtDigiteaFruta.Location = new System.Drawing.Point(136, 55);
+            this.txtDigiteaFruta.MaxLength = 50;
             this.txtDigiteaFruta.Name = "txtDigiteaFruta";
             this.txtDigiteaFruta.Size = new System.Drawing.Size(197, 20);
             this.txtDigiteaFruta.TabIndex = 0;
             // 
             // btbInserir
             // 
-            this.btbInserir.Location = new System.Drawing.Point(389, 385);
+            this.btbInserir.Location = new System.Drawing.Point(423, 385);
             this.btbInserir.Name = "btbInserir";
-            this.btbInserir.Size = new System.Drawing.Size(83, 45);
+            this.btbInserir.Size = new System.Drawing.Size(86, 45);
             this.btbInserir.TabIndex = 4;
             this.btbInserir.Text = "&Inserir";
             this.btbInserir.UseVisualStyleBackColor = true;
+            this.btbInserir.Click += new System.EventHandler(this.btbInserir_Click);
+            // 
+            // btbSelecionar
+            // 
+            this.btbSelecionar.Location = new System.Drawing.Point(178, 385);
+            this.btbSelecionar.Name = "btbSelecionar";
+            this.btbSelecionar.Size = new System.Drawing.Size(86, 45);
+            this.btbSelecionar.TabIndex = 2;
+            this.btbSelecionar.Text = "&Selecionar";
+            this.btbSelecionar.UseVisualStyleBackColor = true;
+            this.btbSelecionar.Click += new System.EventHandler(this.btbSelecionar_Click);
             // 
             // frmFruta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btbSelecionar);
             this.Controls.Add(this.btbInserir);
             this.Controls.Add(this.txtDigiteaFruta);
             this.Controls.Add(this.btbLimpar);
-            this.Controls.Add(this.btbVoltar);
-            this.Controls.Add(this.btnSelecionar);
+            this.Controls.Add(this.btbSair);
             this.Controls.Add(this.lblFrutasListadas);
             this.Controls.Add(this.lblDIgiteaFruta);
             this.Controls.Add(this.lblFrutasSelecionadas);
@@ -264,11 +270,11 @@ namespace Componentes
         private System.Windows.Forms.Label lblFrutasSelecionadas;
         private System.Windows.Forms.Label lblDIgiteaFruta;
         private System.Windows.Forms.Label lblFrutasListadas;
-        private System.Windows.Forms.Button btnSelecionar;
-        private System.Windows.Forms.Button btbVoltar;
+        private System.Windows.Forms.Button btbSair;
         private System.Windows.Forms.Button btbLimpar;
         private System.Windows.Forms.TextBox txtDigiteaFruta;
         private System.Windows.Forms.Button btbInserir;
+        private System.Windows.Forms.Button btbSelecionar;
     }
 }
 
