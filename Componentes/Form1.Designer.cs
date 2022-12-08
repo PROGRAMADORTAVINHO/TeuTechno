@@ -202,6 +202,7 @@ namespace Componentes
             this.txtDigiteaFruta.Name = "txtDigiteaFruta";
             this.txtDigiteaFruta.Size = new System.Drawing.Size(197, 20);
             this.txtDigiteaFruta.TabIndex = 0;
+            this.txtDigiteaFruta.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDigiteaFruta_KeyDown);
             // 
             // btbInserir
             // 

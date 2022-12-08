@@ -42,6 +42,10 @@ namespace Componentes
                     break;
             }
             txtSelecione.Text = frutas;
+
+            txtDigiteaFruta.Text = "";
+            txtDigiteaFruta.Focus();
+
         }
 
         private void btbLimpar_Click(object sender, EventArgs e)
@@ -73,9 +77,6 @@ namespace Componentes
         }
         private void btbSair_Click(object sender, EventArgs e)
         {
-
-           // Application.Exit();
-
             DialogResult res;
 
             res = MessageBox.Show("Deseja Sair", "Mensagem do Siatema", 
@@ -83,9 +84,23 @@ namespace Componentes
                 MessageBoxIcon.Exclamation, 
                 MessageBoxDefaultButton.Button2);
 
-            if (DialogResult.Yes == res)
+            if (res == DialogResult.Yes)
             {
-                Application.Exit();
+                Application.Exit(); //Fecha todas as Tarefas
+            }
+            else
+            {
+                LimparCampos();
+            }
+
+        }
+
+        private void txtDigiteaFruta_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if(e.KeyCode == Keys.Enter)
+            {
+                btbSelecionar.Focus();
             }
 
         }
